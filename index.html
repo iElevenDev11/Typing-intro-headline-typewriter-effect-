@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Enhanced Typing Intro Headline</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="headline"></h1>
+      <div class="controls">
+        <button class="control-btn" onclick="toggleSound()" id="soundBtn">
+          🔊 Sound ON
+        </button>
+        <button class="control-btn" onclick="toggleErrors()" id="errorBtn">
+          ❌ Errors OFF
+        </button>
+        <button class="control-btn" onclick="changeSpeed()" id="speedBtn">
+          ⚡ Normal Speed
+        </button>
+        <button class="control-btn" onclick="restartAnimation()">
+          🔄 Restart
+        </button>
+      </div>
+      <div class="status" id="status">Ready to type...</div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>

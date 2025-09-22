@@ -1,0 +1,107 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
+  margin: 0;
+  font-family: "Courier New", Courier, monospace;
+  color: #fff;
+  padding: 20px;
+  box-sizing: border-box;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.container {
+  text-align: center;
+  max-width: 90vw;
+}
+
+.headline {
+  font-size: clamp(1.5rem, 5vw, 3rem);
+  border-right: 4px solid #00ff00;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  min-height: 1.2em;
+  background: rgba(0, 255, 0, 0.1);
+  padding: 10px 15px;
+  border-radius: 4px;
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+}
+
+@keyframes caret {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.headline.typing {
+  animation: caret 0.7s step-end infinite;
+}
+
+.controls {
+  margin-top: 30px;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.control-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.control-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.control-btn:active {
+  transform: translateY(0);
+}
+
+.status {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body {
+    animation: none;
+    opacity: 1;
+  }
+  .headline {
+    animation: none;
+    border-right: 4px solid #00ff00;
+  }
+  .control-btn {
+    transition: none;
+  }
+  .control-btn:hover {
+    transform: none;
+  }
+}
+
+/* Error highlight effect */
+.headline.error {
+  background: rgba(255, 0, 0, 0.1);
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+}
